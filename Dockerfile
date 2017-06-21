@@ -1,6 +1,6 @@
 FROM centos:latest
 
-RUN yum install -y epel-release && yum install -y R
+RUN yum install -y epel-release && yum install -y R libcurl-devel openssl-devel
 
 RUN R -e "install.packages(c('shiny', 'rmarkdown', 'plotly', 'DT','data.table','dplyr','car','scales'), repos='https://cran.rstudio.com/', INSTALL_opts=c('--no-html', '--no-docs', '--without-keep.source'))"
 
