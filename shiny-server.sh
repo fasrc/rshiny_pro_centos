@@ -1,7 +1,7 @@
-#!/usr/local/bin/dumb-init
+#!/usr/local/bin/dumb-init /bin/bash
 if [[ -z $LICENSE ]]; then
-  /usr/bin/shiny-server 2>&1 &
-  /opt/shiny-server/bin/license-manager activate $LICENSE 2>&1
+  exec /usr/bin/shiny-server 2>&1 &
+  exec /opt/shiny-server/bin/license-manager activate $LICENSE 2>&1
 else
-  /usr/bin/shiny-server 2>&1
+  exec /usr/bin/shiny-server 2>&1
 fi
