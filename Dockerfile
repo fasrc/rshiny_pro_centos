@@ -1,6 +1,6 @@
 FROM centos:latest
 
-RUN yum install -y epel-release && yum install -y R libcurl-devel openssl-devel
+RUN yum install -y epel-release && yum install -y R libcurl-devel openssl-devel wget
 
 RUN mkdir -pv "/usr/share/doc/R-$(rpm -q --qf "%{VERSION}" R)/html"
 
