@@ -8,6 +8,6 @@ RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/
 RUN R -e "install.packages(c('plotly', 'DT', 'RPostgreSQL', 'data.table','dplyr','car','scales','devtools'), repos='https://cran.rstudio.com/', INSTALL_opts=c('--no-html', '--no-docs', '--without-keep.source', '--clean'))"
 
 # these are two packages we need to show a loading screen while data are loaded from db
-RUN R -e "install.packages(c('shinyjs', 'shinycssloadersplotly'), repos='https://cran.rstudio.com/', INSTALL_opts=c('--no-html', '--no-docs', '--without-keep.source', '--clean'))"
+RUN R -e "install.packages(c('shinyjs', 'shinycssloaders'), repos='https://cran.rstudio.com/', INSTALL_opts=c('--no-html', '--no-docs', '--without-keep.source', '--clean'))"
 
 COPY shiny-server.sh /usr/bin/shiny-server.sh
